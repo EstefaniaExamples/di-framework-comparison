@@ -21,15 +21,19 @@ public class ApplicationLifecycle {
     private static final Logger LOGGER = Logger.getLogger(ApplicationLifecycle.class);
 
     @Inject
-    private BeanManager beanManager;
+    BeanManager beanManager;
 
-    void onStart(@Observes StartupContext ev) {
+    void onStart(@Observes StartupEvent ev) {
         final String SPACE = " ";
         final AtomicInteger counter = new AtomicInteger();
         final Set<Bean<?>> beans = beanManager.getBeans(Object.class, new AnnotationLiteral<Any>() {});
         for (final Bean<?> bean : beans) {
-            LOGGER.info(counter.getAndIncrement() + SPACE + bean.getName());
+            LOGGER.info(counter.getAndIncrement() + SPACE + bean.getBeanClass().getName());
         }
+    }
+
+    void onContextStart(@Observes StartupContext ev) {
+        LOGGER.info("***** Startup context");
     }
 
     void onStop(@Observes ShutdownEvent ev) {
