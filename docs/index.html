@@ -25,35 +25,121 @@
 
 			<div class="slides">
 				<section>
-					<img src="./img/quarkusLogo.png" alt="quarkus logo" style="height: 200px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-					<img src="./img/springbootLogo.png" alt="spring boot logo" style="height: 200px; margin: 0 auto 4rem 4rem; background: transparent;" class="demo-logo">
-					<h3>Dependency injection <br> Quarkus ArC vs Spring Boot IoC</h3>
-					<p>
+
+					<table style="width:100%;">
+						<tr>
+						  <td align="center"><img src="./img/quarkusLogo.png" alt="quarkus logo" style="height: 200px; background: transparent;" class="demo-logo"></td>
+						  <td style="vertical-align: middle;  text-align: left;"><h3>Quarkus CDI</h3></td>
+						</tr>
+						<tr>
+						  <td style="vertical-align: middle; text-align: right; padding: 0px;"><h3>SpringBoot DI</h3></td>
+						  <td align="center"><img src="./img/springbootLogo.png" alt="spring boot logo" style="height: 200px; background: transparent;" class="demo-logo"></td>
+						</tr>
+					  </table>
+				
+					</br><p>
 						<small>Created by <a href="https://www.linkedin.com/in/estefania-castro/">Estefanía Castro</a> for <a href="http://www.serbatic.es/">Serbatic</a></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Dependency injection</h2>
-					<p style="font-size:26px">Dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies.</p>
-					<img src="./img/dependencyInjection.png" alt="quarkus logo" style="height: 200px; margin: 1rem auto 1rem auto; background: transparent;" class="demo-logo">
-					<p style="font-size:26px">
-						Instead of the client specifying which service it will use, the injector tells the client what service to use.
-						Passing the service to the client, rather than allowing a client to build or find the service, is the fundamental requirement of the pattern.
-					</p>
-				</section>
-
 				<section data-transition="slide" data-background="#4695eb" data-background-transition="zoom">
-					<h2>Quarkus ArC</h2>
-					<p>
-						Quarkus ArC is a build-time oriented dependency injection based on CDI 2.0. Basically it is a CDI implementation.
-					</p>
+					<section data-transition="concave">
+						<h2>Quarkus ArC</h2>
+						<p>
+							Quarkus ArC is a build-time oriented dependency injection based on CDI 2.0. Basically it is a CDI implementation.
+						</p>
+					</section>
+					<section data-transition="concave">
+						<ul style="font-size: xx-large;">
+							<li>ArC is not a full CDI implementation - see the list of 
+								<a href="https://quarkus.io/guides/cdi-reference#supported_features">supported features</a> and the list of 
+								<a href="https://quarkus.io/guides/cdi-reference#limitations">limitations</a>.</li>
+								<li>The CDI APIs and annotations are defined under the root packages: 
+									<span style="font-size: x-large; color: #980000; font-family: 'Courier New', monospace;">javax.inject</span>, 
+									<span style="font-size: x-large; color: #980000; font-family: 'Courier New', monospace;">javax.enterprise</span> and 
+									<span style="font-size: x-large; color: #980000; font-family: 'Courier New', monospace;">javax.interceptor</span>.</li>
+								<li>CDI is part of the core of Quarkus and most extensions need it (you don’t have to explicitly add the CDI extension)</li>
+						</ul>
+					</section>	
+
+					<section data-transition="concave">
+						<h4>Context and Dependency Injection (CDI):</h4>
+						<ul style="font-size: xx-large;">
+							<li>Standard dependency injection framework</li>
+							<li>Central technology in Jakarta EE or in MicroProfile (it turns every component into an injectable, interceptable and manageable bean)</li>
+							<li>It is built on the concept of "loose coupling, strong typing" (beans are loosely coupled, but in a strongly-typed way)</li>
+							<li>It manages the scopes among beans, the context and the life cycle management (CDI events)</li>
+						</ul>
+					</section>	
+					<section data-transition="concave">
+						<p style="text-align: left;">There are two primary parts of CDI:</p>
+						<ul>
+							<li>
+								<b>Contexts</b> refer to the ability to define applications by data scope
+							</li>
+							<li>
+								<b>Dependency Injection</b> is the ability to inject beans into others in a typesafe way, which means annotations rather than XML
+							</li>
+						</ul>
+					</section>
+					<section data-transition="concave">
+						<p>It allows us to manage the lifecycle of stateful components via domain-specific lifecycle contexts and inject components (services) into client objects in a type-safe way.</p>
+						<img src="./img/cdi_word_cloud_white.gif"/>
+					</section>			
 				</section>
 
 				<section data-transition="slide" data-background="#6db33f" data-background-transition="zoom">
-					<h2>Spring Boot IoC</h2>
+					<section data-transition="concave">
+						<h2>Spring Boot IoC</h2>
+						<p>
+							Inversion of Control is a principle in software engineering by which the control of objects or portions of a program is transferred to a container or framework.
+						</p>
+						<p>
+							It can be achieved through various mechanisms such as: Strategy design pattern, Service Locator pattern, Factory pattern, and <b>Dependency Injection (DI)</b>.
+						</p>
+					</section>
+					<section data-transition="concave">
+						<h4>Dependency injection</h4>
+						<ul style="font-size: xx-large;">
+							<li>It is a pattern through which to implement IoC, where the control being inverted is the setting of object's dependencies.</li>
+							<li>In this technique an object receives other objects that it depends on. These other objects are called dependencies.</li>
+						</ul>
+						<img src="./img/dependencyInjection.png" alt="quarkus logo" style="height: 200px; margin: 1rem auto 1rem auto; background: transparent;" class="demo-logo">
+						<ul style="font-size: xx-large;">
+							<li>
+								Instead of the client specifying which service it will use, the injector tells the client what service to use.
+								Passing the service to the client, rather than allowing a client to build or find the service, is the fundamental requirement of the pattern.
+							</li>
+					</section>
+					<section data-transition="concave">
+						<h4>Spring IoC Container</h4>
+						<ul style="font-size: xx-large;">
+							<li>The <b>Spring IoC Container</b> is a common characteristic of frameworks that implement IoC. It is represented by the interface </em>ApplicationContext</em>. </li>
+							<li>The Spring container is responsible for instantiating, configuring and assembling objects known as beans, as well as managing their lifecycle.</li>
+							<li>The <span style="font-size: x-large; color: #980000; font-family: 'Courier New', monospace;">org.springframework.beans</span> and 
+								<span style="font-size: x-large; color: #980000; font-family: 'Courier New', monospace;">org.springframework.context</span> packages provide the basis for the Spring Framework’s IoC container.</li>
+						</ul>
+					</section>	
+					<section data-transition="concave">
+						Spring offers support for JSR-330 standard annotations (Dependency Injection). 
+						Those annotations are scanned in the same way as the Spring annotations. 
+						You just need to add the dependency <span style="font-size: xx-large; color: #980000; font-family: 'Courier New', monospace;">javax.inject</span> in your pom file.
+					</section>
+				</section>
+
+				<section>
+					<h2>Thanks for join us</h3></br>
 					<p>
-						Inversion of Control is a principle in software engineering by which the control of objects or portions of a program is transferred to a container or framework.
+						<small>
+							<a href="http://cdi-spec.org/">CDI oficial documentation</a> </br>
+							<a href="https://quarkus.io/guides/cdi-reference/">Quarkus article about CDI</a> </br>
+							<a href="https://github.com/agoncal/agoncal-fascicle-quarkus/tree/1.0/core">Quarkus CDI examples</a> </br></br>
+
+							<a href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans">Springboot official doc about IoC</a> </br>
+							<a href="https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring">Springboot IoC example</a> </br></br>
+
+							<a href=https://mobiarch.wordpress.com/2013/01/11/spring-di-and-cdi-comparative-study>Springboot DI vs Quarkus CDI</a> </br>
+						</small>
 					</p>
 				</section>
 			</div>
