@@ -127,6 +127,26 @@
 					</section>
 				</section>
 
+				<section data-transition="slide" data-background="#6db33f" data-background-transition="zoom">
+					<section data-transition="concave">
+						<h2>Spring Boot CGLIB</h2>
+						<p>Spring generates enhanced configuration clases by creating CGLIB proxy/subclases during the initialization process so that it makes possible the inter-bean method references.</p>
+						<pre style="text-align: center;"><code data-trim data-noescape>SomeConfiguration$$EnhancerBySpringCGLIB$$4b5569b2</code></pre>
+					</section>
+					<section data-transition="concave">
+						<h4>Full configuration class</h4>
+						<p>Any method invocation will be intercepted to determine if the bean has already breen created (the existing cached instance will be returned) or 
+							if the configuration class has to create the bean. This guarantees your initialization code is called just once (singleton scope).
+						</p>
+					</section>
+					<section data-transition="concave">
+						<h4>Lite Bean Mode</h4>
+						<p>Generating proxies for configuration classes takes some time and might affect your application startup time.</p>
+						<p>Lite Beans are beans that are not going to be intercepted. We can get this mode using </p>
+							<pre style="text-align: center;"><code data-trim data-noescape>@Configuration(proxyBeanMethods=false)</code></pre>
+					</section>
+				</section>
+
 				<section>
 					<h2>Thanks for join us</h3></br>
 					<p>
