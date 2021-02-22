@@ -145,6 +145,49 @@
 						<p>Lite Beans are beans that are not going to be intercepted. We can get this mode using </p>
 							<pre style="text-align: center;"><code data-trim data-noescape>@Configuration(proxyBeanMethods=false)</code></pre>
 					</section>
+					<section data-transition="concave">
+						<p>The javadoc gives a detailed explanation for this particular field: </p>
+						<blockquote><p style="text-align:left;font-style:italic;font-size: 25px;">
+							<em style="color: #535a60;">Specify whether {@code @Bean} methods should get proxied in order to enforce bean lifecycle behavior, e.g. to return shared singleton bean instances even in case of direct {@code @Bean} method calls in user code. (...)</em>
+							<em style="color: #535a60;">If this is not needed since each of this particular configuration's {@code @Bean} methods is self-contained and designed as a plain factory method for container use, switch this flag to {@code false} in order to avoid CGLIB subclass processing.(...)</em>
+						</p></blockquote>
+					</section>
+					<section data-transition="concave">
+						<pre><code data-line-numbers="5,9,13">@Configuration(proxyBeanMethods=true)
+public class SomeConfiguration {
+	@Bean
+	ServiceC sharedService(){
+		return new ServiceC();
+	}
+	@Bean
+	ServiceA serviceA(){
+		return new ServiceA(sharedService());
+	}
+	@Bean
+	ServiceB serviceB(){
+		return new ServiceB(sharedService());
+	}
+}
+						</code></pre>
+					</section>
+					<section data-transition="concave">
+						<pre><code data-line-numbers="5,9,13">@Configuration(proxyBeanMethods=false)
+public class SomeSmarterConfiguration {
+	@Bean
+	ServiceC sharedService(){
+		return new ServiceC();
+	}
+	@Bean
+	ServiceA serviceA(ServiceC sharedService){
+		return new ServiceA(sharedService);
+	}
+	@Bean
+	ServiceB serviceB(ServiceC sharedService){
+		return new ServiceB(sharedService);
+	}
+}
+						</code></pre>
+					</section>					
 				</section>
 
 				<section>
