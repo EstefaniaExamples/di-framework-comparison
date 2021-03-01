@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/di-framework-comparison.iml" filepath="$PROJECT_DIR$/.idea/di-framework-comparison.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quarkus-case/quarkus-case.iml" filepath="$PROJECT_DIR$/quarkus-case/quarkus-case.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-case/springboot-case.iml" filepath="$PROJECT_DIR$/springboot-case/springboot-case.iml" />
+    </modules>
+  </component>
+</project>
