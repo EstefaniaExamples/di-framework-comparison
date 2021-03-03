@@ -1,10 +1,13 @@
-package org.cdi.example;
+package org.cdi.example.service.sub;
 
-import org.springframework.stereotype.Service;
+import org.cdi.example.qualifiers.LongSerialNumber;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Random;
 
-@Service("commonSerialImpl")
+@LongSerialNumber
+@ApplicationScoped
+//@Default
 public class CommonSerialImpl implements SerialNumber {
     @Override
     public String generateSerialNumber() {

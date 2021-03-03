@@ -1,4 +1,4 @@
-package org.cdi.example;
+package org.cdi.example.service.sub;
 
 public interface SerialNumber {
     String generateSerialNumber();

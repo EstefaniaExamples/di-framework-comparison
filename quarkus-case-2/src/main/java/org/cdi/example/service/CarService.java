@@ -1,6 +1,6 @@
 package org.cdi.example.service;
 
-import org.cdi.example.SerialNumber;
+import org.cdi.example.service.sub.SerialNumber;
 import org.cdi.example.model.Car;
 import org.cdi.example.qualifiers.LongSerialNumber;
 

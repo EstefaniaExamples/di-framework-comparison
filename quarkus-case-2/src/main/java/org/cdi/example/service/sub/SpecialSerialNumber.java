@@ -1,10 +1,12 @@
-package org.cdi.example;
+package org.cdi.example.service.sub;
 
-import org.springframework.stereotype.Service;
+import org.cdi.example.qualifiers.ShortSerialNumber;
 
+import javax.enterprise.context.ApplicationScoped;
 import java.util.Random;
 
-@Service("specialSerialNumber")
+@ShortSerialNumber
+@ApplicationScoped
 public class SpecialSerialNumber implements SerialNumber {
     @Override
     public String generateSerialNumber() {
