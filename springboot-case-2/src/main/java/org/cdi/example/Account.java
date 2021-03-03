@@ -1,7 +1,7 @@
-package com.cdi.example.springbootcase;
+package org.cdi.example;
 
-import com.cdi.example.springbootcase.sort.InsertionSort;
-import com.cdi.example.springbootcase.sort.SortingServices;
+import org.cdi.example.sort.InsertionSort;
+import org.cdi.example.sort.SortingServices;
 
 public abstract class Account {
     // Default sorting method for transactions etc.

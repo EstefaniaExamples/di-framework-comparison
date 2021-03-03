@@ -1,6 +1,6 @@
-package com.cdi.example.springbootcase;
+package org.cdi.example;
 
-import com.cdi.example.springbootcase.sort.BubbleSort;
+import org.cdi.example.sort.BubbleSort;
 
 public class Saving extends Account {
     // Saving accounts likes to use Bubble sort for sorting needs.

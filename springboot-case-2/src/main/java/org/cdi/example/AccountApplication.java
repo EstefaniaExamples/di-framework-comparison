@@ -1,4 +1,4 @@
-package com.cdi.example.springbootcase;
+package org.cdi.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

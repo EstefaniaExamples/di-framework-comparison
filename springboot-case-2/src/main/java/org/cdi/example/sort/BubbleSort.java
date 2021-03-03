@@ -1,4 +1,4 @@
-package com.cdi.example.springbootcase.sort;
+package org.cdi.example.sort;
 
 public class BubbleSort implements SortingServices {
     @Override

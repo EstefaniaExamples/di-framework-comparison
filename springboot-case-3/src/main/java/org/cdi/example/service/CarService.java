@@ -2,22 +2,21 @@ package org.cdi.example.service;
 
 import org.cdi.example.SerialNumber;
 import org.cdi.example.model.Car;
-import org.cdi.example.qualifiers.LongSerialNumber;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-
-@ApplicationScoped
+@Service
 public class CarService {
 //    private final SerialNumber serialNumber;
 //
-//    public CarService(final SerialNumber serialNumber) {
+//    public CarService(@Qualifier("commonSerialImpl") final SerialNumber serialNumber) {
 //        this.serialNumber = serialNumber;
 //    }
 
-    @Inject
-    @LongSerialNumber
-    SerialNumber serialNumber;
+    @Autowired
+    @Qualifier("commonSerialImpl")
+    private SerialNumber serialNumber;
 
     public Car createNewCar(final String brand, final String model, final String colour) {
         final Car car = new Car(brand, model, colour);
