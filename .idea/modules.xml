@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/di-framework-comparison.iml" filepath="$PROJECT_DIR$/.idea/di-framework-comparison.iml" />
       <module fileurl="file://$PROJECT_DIR$/quarkus-case/quarkus-case.iml" filepath="$PROJECT_DIR$/quarkus-case/quarkus-case.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quarkus-case-2/quarkus-case-2.iml" filepath="$PROJECT_DIR$/quarkus-case-2/quarkus-case-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-case/springboot-case.iml" filepath="$PROJECT_DIR$/springboot-case/springboot-case.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-case-2/springboot-case-2.iml" filepath="$PROJECT_DIR$/springboot-case-2/springboot-case-2.iml" />
     </modules>

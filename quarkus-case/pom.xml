@@ -5,6 +5,13 @@
   <groupId>org.cdi.example</groupId>
   <artifactId>quarkus-case</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.training</groupId>
+    <artifactId>di-framework-comparison</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
@@ -15,9 +22,10 @@
     <quarkus-plugin.version>1.11.1.Final</quarkus-plugin.version>
     <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>1.11.1.Final</quarkus.platform.version>
-    <surefire-plugin.version>2.22.1</surefire-plugin.version>
+    <quarkus.platform.version>1.12.1.Final</quarkus.platform.version>
+    <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -29,6 +37,7 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
