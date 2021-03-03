@@ -6,12 +6,6 @@
   <artifactId>quarkus-case</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
-  <parent>
-    <groupId>org.training</groupId>
-    <artifactId>di-framework-comparison</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
     <maven.compiler.parameters>true</maven.compiler.parameters>
