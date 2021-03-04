@@ -1,17 +1,15 @@
 package org.cdi.example;
 
-import io.quarkus.test.junit.QuarkusTest;
 import org.cdi.example.model.Car;
 import org.cdi.example.service.CustomCarService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.inject.Inject;
-
-
-@QuarkusTest
+@SpringBootTest
 public class CustomCarServiceTest {
-    @Inject
+    @Autowired
     private CustomCarService customCarService;
 
     @Test
